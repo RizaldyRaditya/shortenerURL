@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+    <style type="text/css">
+      .header {
+        background: linear-gradient(
+          90deg,
+          rgba(98, 86, 199, 1) 0%,
+          rgba(93, 98, 207, 1) 35%,
+          rgba(62, 157, 246, 1) 100%
+        );
+        height: 100px;
+      }
+      h3 {
+        padding-left: 20px;
+        padding-top: 10px;
+        color: white;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      .nav {
+        color: white;
+      }
+      .nav-link {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        padding-left: 1px;
+        margin-top: -5px;
+        margin-left: 18px;
+        color: white;
+      }
+      .nav-link:hover {
+        color: #17c0eb;
+      }
+      a.btn {
+        border-radius: 50px;
+        margin-top: -5px;
+        margin-left: 10px;
+        color: #3d9cf5;
+        width: 120px;
+        height: 38px;
+      }
+      a.btn:hover {
+        background-color: #3d9cf5;
+        color: white;
+      }
+      h4 {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        position: relative;
+        margin-top: 80px;
+        text-align: center;
+      }
+      input {
+        margin-top: 20px;
+        text-align: center;
+        margin-left: 275px;
+      }
+      button {
+        margin-top: 20px;
+        margin-left: 485px;
+      }
+      button.btn {
+        border-radius: 10px;
+      }
+      .example {
+        margin-top: 20px;
+      }
+
+      .example h6 {
+        margin-top: 15px;
+      }
+      .redirection h5 {
+        margin-top: 30px;
+      }
+
+      .redirection p.link {
+        text-align: center;
+      }
+      .redirection p.redirect {
+        text-align: center;
+      }
+      .footer {
+        color: #95a5a6;
+        margin-top: 60px;
+        background-color: rgba(0, 0, 0, 0.01);
+        text-align: center;
+      }
+      .footer p {
+        font-size: 17px;
+        font-family: "Times New Roman", Times, serif;
+        padding-top: 30px;
+      }
+      .footer p.copy {
+        padding-top: 5px;
+      }
+
+      /* Tampilan pada tablet */
+      @media only screen and (max-width: 991.98px) {
+        .header {
+          background: linear-gradient(
+            90deg,
+            rgba(98, 86, 199, 1) 0%,
+            rgba(93, 98, 207, 1) 35%,
+            rgba(62, 157, 246, 1) 100%
+          );
+          height: 100px;
+        }
+      }
+      input {
+        margin-top: 20px;
+        text-align: center;
+        margin-left: 25%;
+      }
+      button {
+        margin-top: 20px;
+        margin-left: 40%;
+      }
+      button.btn {
+        border-radius: 10px;
+      }
+
+      /* Tampilan smartphone */
+      @media only screen and (max-width: 575.98px) {
+        p {
+          text-align: justify;
+        }
+        .header {
+          background: linear-gradient(
+            90deg,
+            rgba(98, 86, 199, 1) 0%,
+            rgba(93, 98, 207, 1) 35%,
+            rgba(62, 157, 246, 1) 100%
+          );
+          width: 100%;
+          height: 100%;
+          padding-bottom: 5%;
+        }
+        a.btn {
+          border-radius: 50px;
+          margin-top: 2%;
+          margin-left: 10px;
+          color: #3d9cf5;
+          width: 120px;
+          height: 38px;
+        }
+        a.btn:hover {
+          background-color: #3d9cf5;
+          color: white;
+        }
+        .footer {
+          width: 100%;
+          margin-bottom: auto;
+        }
+
+        input {
+          margin-top: 20px;
+          text-align: center;
+          margin-left: 0%;
+        }
+        button {
+          margin-top: 20px;
+          margin-left: 30%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h3>
+        <strong><i>Shortener</i>URL</strong>
+      </h3>
+      <nav class="nav">
+        <a class="nav-link" href="">Home</a> |
+        <a class="nav-link" href="#example">Example</a> |
+        <a class="nav-link" href="#redirection">Redirection</a> |
+        <a class="btn btn-light" href="mailto:coba@gmail.com">Contact Us</a>
+      </nav>
+    </div>
+
+    <div class="container">
+      <h4>Make Your ShortURL</h4>
+      <form action="/create" method="post" enctype="multipart/form-data">
+        <input
+          type="text"
+          class="form-control col-sm-6"
+          placeholder="Enter Long URL"
+          name="longURL"
+          required
+        />
+        <button class="btn btn-outline-primary" type="submit">
+          Make ShortURL
+        </button>
+      </form>
+
+      <div class="example" id="example">
+        <h5><strong>Example</strong></h5>
+        <h6>Turn this URL :</h6>
+        <a
+          href="https://www.google.com/search?q=kano+solution&rlz=1C1CHBF_enID883ID883&oq=kano+solution&aqs=chrome..69i57j69i60.2855j0j9&sourceid=chrome&ie=UTF-8"
+          class="link" style="text-decoration: none; color: black;"
+        >
+          https://www.google.com/search?q=kano+solution
+          &rlz=1C1CHBF_enID883ID883&oq=kano+solution
+          &aqs=chrome..69i57j69i60.2855j0j9&sourceid=chrome&ie=UTF-8</a
+        >
+        <h6>Into this URL :</h6>
+        <a href="https://shorturl.com/dFqwe21" class="link" style="text-decoration: none; color: black;"
+          >https://shorturl.com/dFqwe21</a
+        >
+      </div>
+
+      <div class="redirection" id="redirection">
+        <h5><strong>Redirection to any page in your site!</strong></h5>
+        <p>
+          With ShortURL, you can also make a smaller URL that will work for any
+          page on your site. Let's say that you have a website with the homepage
+          that is at:
+        </p>
+        <p class="link">
+          <strong>https://siswa.smktelkom-mlg.sch.id/welcome</strong>
+        </p>
+        <p>Entering that URL into TinyURL will create a URL like</p>
+        <p class="redirect"><strong>http://shorturl.com/1</strong></p>
+        <p>
+          With this you can then redirect someone to anywhere within your site
+          by appending a slash and the pages filename to it. So if you have a
+          page at
+          <a href="https://siswa.smktelkom-mlg.sch.id/welcome" style="text-decoration: none; color: black;"
+            >https://siswa.smktelkom-mlg.sch.id/welcome</a
+          >
+          , you can use the URL
+          <a href="http://shorturl.com/1" style="text-decoration: none; color: black;"> http://shorturl.com/1</a> and going
+          to this URL will forward the visitor to the page in your website.
+        </p>
+      </div>
+    </div>
+    <div class="card footer">
+      <div class="card-header">
+        <p>
+          <strong
+            ><i>Shortener</i>URL &emsp13; made with &hearts; &emsp13; by
+            Kelompok Magang SMK TELKOM MALANG</strong
+          >
+        </p>
+        <p class="copy">&copy; 2020</p>
+      </div>
+    </div>
+  </body>
+</html>
