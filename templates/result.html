@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+    <style type="text/css">
+      .header {
+        background: linear-gradient(
+          90deg,
+          rgba(98, 86, 199, 1) 0%,
+          rgba(93, 98, 207, 1) 35%,
+          rgba(62, 157, 246, 1) 100%
+        );
+        height: 100px;
+      }
+      h3 {
+        padding-left: 20px;
+        padding-top: 10px;
+        color: white;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      .nav {
+        color: white;
+      }
+      .nav-link {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        padding-left: 1px;
+        margin-top: -5px;
+        margin-left: 18px;
+        color: white;
+      }
+      .nav-link:hover {
+        color: #17c0eb;
+      }
+      a.btn {
+        border-radius: 50px;
+        margin-top: -5px;
+        margin-left: 10px;
+        color: #3d9cf5;
+        width: 120px;
+        height: 38px;
+      }
+      a.btn:hover {
+        background-color: #3d9cf5;
+        color: white;
+      }
+      .result {
+        margin-top: 30px;
+      }
+      .result strong {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 25px;
+      }
+      .result h6 {
+        margin-top: 20px;
+      }
+      .result tr td {
+        font-weight: bold;
+      }
+
+      /* Tampilan pada tablet */
+      @media only screen and (max-width: 991.98px) {
+        .header {
+          background: linear-gradient(
+            90deg,
+            rgba(98, 86, 199, 1) 0%,
+            rgba(93, 98, 207, 1) 35%,
+            rgba(62, 157, 246, 1) 100%
+          );
+          height: 100px;
+        }
+      }
+
+      /* Tampilan smartphone */
+      @media only screen and (max-width: 575.98px) {
+        p {
+          text-align: justify;
+        }
+        .header {
+          background: linear-gradient(
+            90deg,
+            rgba(98, 86, 199, 1) 0%,
+            rgba(93, 98, 207, 1) 35%,
+            rgba(62, 157, 246, 1) 100%
+          );
+          width: 100%;
+          height: 100%;
+          padding-bottom: 5%;
+        }
+        a.btn {
+          border-radius: 50px;
+          margin-top: 2%;
+          margin-left: 10px;
+          color: #3d9cf5;
+          width: 120px;
+          height: 38px;
+        }
+        a.btn:hover {
+          background-color: #3d9cf5;
+          color: white;
+        }
+        .footer {
+          width: 100%;
+          margin-bottom: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h3>
+        <strong><i>Shortener</i>URL</strong>
+      </h3>
+      <nav class="nav">
+        <a class="nav-link" href="/">Home</a> |
+        <a class="nav-link" href="/#example">Example</a> |
+        <a class="nav-link" href="/#redirection">Redirection</a> |
+        <a class="btn btn-light" href="mailto:coba@gmail.com">Contact Us</a>
+      </nav>
+    </div>
+
+    <div class="container">
+      <div class="result">
+        <strong>ShortURL Created</strong>
+        <h6>Your URL :</h6>
+        <tr>
+          <td>{{.LongURL}}</td>
+        </tr>
+        <h6>The Result :</h6>
+        <tr>
+          <td id="shorturl">{{.ShortURL}}</td>
+        </tr>
+        <h6><a href="/go/{{.URL}}" target="_blank">Open in new tab</a></h6>
+      </div>
+    </div>
+  </body>
+</html>
