@@ -73,6 +73,12 @@
       button.btn {
         border-radius: 10px;
       }
+      .custom {
+        margin-left: 458px;
+      }
+      .default {
+        margin-left: 482px;
+      }
       .example {
         margin-top: 20px;
       }
@@ -104,6 +110,9 @@
       .footer p.copy {
         padding-top: 5px;
       }
+      .hidden {
+        display: none;
+      }
 
       /* Tampilan pada tablet */
       @media only screen and (max-width: 991.98px) {
@@ -116,7 +125,7 @@
           );
           height: 100px;
         }
-      }
+      
       input {
         margin-top: 20px;
         text-align: center;
@@ -124,12 +133,23 @@
       }
       button {
         margin-top: 20px;
-        margin-left: 40%;
+        margin-left: 280px;
       }
       button.btn {
         border-radius: 10px;
       }
-
+      .hidden {
+        display: none;
+      }
+      .custom {
+        margin-top: 20px;
+        margin-left: 250px;
+      }
+      .default {
+        margin-top: 20px;
+        margin-left: 273px;
+      }
+    }
       /* Tampilan smartphone */
       @media only screen and (max-width: 575.98px) {
         p {
@@ -170,7 +190,16 @@
         }
         button {
           margin-top: 20px;
-          margin-left: 30%;
+          margin-left: 130px;
+        }
+        .hidden {
+          display: none;
+        }
+        .custom {
+          margin-left: 100px;
+        }
+        .default {
+          margin-left: 123px;
         }
       }
     </style>
@@ -190,18 +219,44 @@
 
     <div class="container">
       <h4>Make Your ShortURL</h4>
-      <form action="/create" method="post" enctype="multipart/form-data">
-        <input
-          type="text"
-          class="form-control col-sm-6"
-          placeholder="Enter Long URL"
-          name="longURL"
-          required
-        />
-        <button class="btn btn-outline-primary" type="submit">
-          Make ShortURL
-        </button>
-      </form>
+    <form id="defaultForm" action="/create" method="post" enctype="multipart/form-data">
+      <input
+        type="text"
+        class="form-control col-sm-6"
+        placeholder="Enter LongURL"
+        name="longURL"
+        required
+      />
+      <button class="btn btn-outline-primary" type="submit">
+        Make ShortURL
+      </button>
+      <button type="button" class="btn btn-outline-primary custom" onclick="toggleForms()">
+        Make Custom ShortURL
+      </button>
+    </form>
+
+    <form id="customForm" action="/createC" method="post" enctype="multipart/form-data" class="hidden">
+      <input
+        type="text"
+        class="form-control col-sm-6"
+        placeholder="Enter LongURL"
+        name="longURLC"
+        required
+      />
+      <input
+        type="text"
+        class="form-control col-sm-6"
+        placeholder="Enter Your Custom ShortURL"
+        name="shortURLC"
+        required
+      />
+      <button class="btn btn-outline-primary" type="submit">
+        Make ShortURL
+      </button>
+      <button type="button" class="btn btn-outline-primary default" onclick="toggleForms()">
+        Use Default Form
+      </button>
+    </form>
 
       <div class="example" id="example">
         <h5><strong>Example</strong></h5>
@@ -256,5 +311,19 @@
         <p class="copy">&copy; 2020</p>
       </div>
     </div>
+    <script>
+      function toggleForms() {
+        var defaultForm = document.getElementById('defaultForm');
+        var customForm = document.getElementById('customForm');
+  
+        if (customForm.classList.contains('hidden')) {
+          defaultForm.classList.add('hidden');
+          customForm.classList.remove('hidden');
+        } else {
+          customForm.classList.add('hidden');
+          defaultForm.classList.remove('hidden');
+        }
+      }
+    </script>
   </body>
 </html>
